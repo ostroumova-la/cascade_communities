@@ -5,7 +5,7 @@ from __future__ import print_function
 import partition_metrics
 import networkx as nx
 import community_ext
-import sys
+import sys, os
 from collections import defaultdict
 import numpy as np
 from math import pow, exp
@@ -46,12 +46,17 @@ if algorithm == "clique":
     lmd0 = float(sys.argv[5])
     lmd = lmd0
     filename += "_"+str(lmd)
-res_file = open(filename, "w")
-res_time = open(filename+"_time", "w")
+    
+dir = os.path.dirname("results/")
+if not os.path.exists(dir):
+            os.makedirs(dir)
+    
+res_file = open("results/"+filename, "w")
+res_time = open("results/"+filename+"_time", "w")
 metrics = ['sub_jaccard','sub_nmi','sub_nmi_arithm','sub_fnmi','sub_fnmi_arithm','sub_F-measure','sub_pearson','jaccard_diff','nmi_fixed','nmi_fixed_arithm','fnmi_fixed','fnmi_fixed_arithm','F-measure_diff','pearson_v2','pearson_v3']
 
 for size in range(iters_beg,iters_end+1):
-    print(size)
+    print(size, end=' ', flush=True)
     time0 = tm.time()
     res_file.write(str((pow(2,size)))+"\t")
     results = defaultdict(lambda: [])
@@ -275,3 +280,4 @@ for size in range(iters_beg,iters_end+1):
     time1 = tm.time()
     res_time.write(str(pow(2,size))+"\t")
     res_time.write(str(time1-time0)+"\n")
+print()

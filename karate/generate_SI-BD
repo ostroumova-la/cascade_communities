@@ -1,0 +1,15 @@
+python3 ../SI-BD.py ../default.yaml graph/graph.clusters graph/graph.edges 0.15 1 100000 > results
+python3 ../slicer.py SI-BD-1/ -5 10
+
+python3 ../SI-BD.py ../default.yaml graph/graph.clusters graph/graph.edges 0.15 1 100000 > results
+python3 ../slicer.py SI-BD-2/ -5 10
+
+python3 ../SI-BD.py ../default.yaml graph/graph.clusters graph/graph.edges 0.15 1 100000 > results
+python3 ../slicer.py SI-BD-3/ -5 10
+
+python3 ../SI-BD.py ../default.yaml graph/graph.clusters graph/graph.edges 0.15 1 100000 > results
+python3 ../slicer.py SI-BD-4/ -5 10
+
+python3 ../SI-BD.py ../default.yaml graph/graph.clusters graph/graph.edges 0.15 1 100000 > results
+python3 ../slicer.py SI-BD-5/ -5 10
+

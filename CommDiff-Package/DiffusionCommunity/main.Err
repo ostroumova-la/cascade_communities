@@ -1,0 +1,40 @@
+--------
+/place/home/ostroumova-la/community detection/cascades/CommDiff-Package/DiffusionCommunity/main.Err
+Mon Oct 29 23:56:51 2018
+Execution stopped: IsFlt(false, 0, 0, Val), file ./snap/../glib/dt.h, line 598
+--------
+--------
+/place/home/ostroumova-la/community detection/cascades/CommDiff-Package/DiffusionCommunity/main.Err
+Mon Oct 29 23:56:51 2018
+Execution stopped: ((this!=GetNullRStr())&&(Refs==0))||((this==GetNullRStr())&&(Refs==1)), file ./snap/../glib/dt.h, line 343
+--------
+--------
+/place/home/ostroumova-la/community detection/cascades/CommDiff-Package/DiffusionCommunity/main.Err
+Tue Oct 30 23:04:04 2018
+Execution stopped: IsFlt(false, 0, 0, Val), file ./snap/../glib/dt.h, line 598
+--------
+--------
+/place/home/ostroumova-la/community detection/cascades/CommDiff-Package/DiffusionCommunity/main.Err
+Tue Oct 30 23:04:04 2018
+Execution stopped: ((this!=GetNullRStr())&&(Refs==0))||((this==GetNullRStr())&&(Refs==1)), file ./snap/../glib/dt.h, line 343
+--------
+--------
+/place/home/ostroumova-la/community detection/cascades/CommDiff-Package/DiffusionCommunity/main.Err
+Tue Oct 30 23:04:40 2018
+Execution stopped: IsNodeNm(NId.GetInt()), file dani.cpp, line 271
+--------
+--------
+/place/home/ostroumova-la/community detection/cascades/CommDiff-Package/DiffusionCommunity/main.Err
+Tue Oct 30 23:04:40 2018
+Execution stopped: ((this!=GetNullRStr())&&(Refs==0))||((this==GetNullRStr())&&(Refs==1)), file ./snap/../glib/dt.h, line 343
+--------
+--------
+/place/home/ostroumova-la/community detection/cascades/CommDiff-Package/DiffusionCommunity/main.Err
+Wed Oct 31 22:52:46 2018
+Execution stopped: IsNodeNm(NId.GetInt()), file dani.cpp, line 271
+--------
+--------
+/place/home/ostroumova-la/community detection/cascades/CommDiff-Package/DiffusionCommunity/main.Err
+Wed Oct 31 22:52:46 2018
+Execution stopped: ((this!=GetNullRStr())&&(Refs==0))||((this==GetNullRStr())&&(Refs==1)), file ./snap/../glib/dt.h, line 343
+--------

@@ -26,5 +26,7 @@ We take $p_{in} = 10 p_{out}$ and choose $p_{out}$ such that the number of casca
 
 Use files "generate_SI-BD", "generate_C-SI-BD" and "generate_SIR" to get commands to run for a given dataset. This will produce 5 epidemic samples for each epidemic type. In each case, we generate slices
 
-3. To run base algorithms
+3. Run algorithms
+
+Use file run_base_algorithms for commands
 

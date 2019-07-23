@@ -187,16 +187,16 @@ def compare_partitions_metrics(p1,p2):
     p2_edgevec = p2ev(dict(enumerate(p2_vec)))
     
     if np.var(p1_edgevec)==0 or np.var(p2_edgevec)==0:
-        print("problem")
-        print("p1 =", p1_edgevec)
-        print("p2 =", p2_edgevec)
+        #print("problem")
+        #print("p1 =", p1_edgevec)
+        #print("p2 =", p2_edgevec)
         if p1_edgevec == p2_edgevec:
             res['sub_pearson'] = 1.
             res['sub_spearman'] = 1.
         else:
             res['sub_pearson'] = 0.
             res['sub_spearman'] = 0.
-        print("index = ", res['sub_pearson'])
+        #print("index = ", res['sub_pearson'])
     else:          
         res['sub_pearson'] = pearsonr(p1_edgevec,p2_edgevec)[0]
         res['sub_spearman'] = spearmanr(p1_edgevec,p2_edgevec)[0]
@@ -288,16 +288,16 @@ def compare_partitions_metrics(p1,p2):
             p1_edgevec_v2.append( 0.5 )
 
     if np.var(p1_edgevec_v2)==0 or np.var(p2_edgevec_v2)==0:
-        print("problem")
-        print("p1 = ", p1_edgevec)
-        print("p2 = ", p2_edgevec)
+        #print("problem")
+        #print("p1 = ", p1_edgevec)
+        #print("p2 = ", p2_edgevec)
         if p1_edgevec_v2 == p2_edgevec_v2:
             res['pearson_v2'] = 1.
             res['spearman_v2'] = 1.
         else:
             res['pearson_v2'] = 0.
             res['spearman_v2'] = 0.
-        print("index = ", res['pearson_v2'])
+        #print("index = ", res['pearson_v2'])
     else:          
         res['pearson_v2'] = pearsonr(p1_edgevec_v2,p2_edgevec_v2)[0]
         res['spearman_v2'] = spearmanr(p1_edgevec_v2,p2_edgevec_v2)[0]
@@ -364,10 +364,10 @@ def compare_partitions_metrics(p1,p2):
             else:
                 p1_edgevec_v3.append( 0. )
     if np.var(p1_edgevec_v3)==0 or np.var(p2_edgevec_v3)==0:
-        print("problem")
-        print("p1 = ", p1_edgevec_v3)
-        print("p2 = ", p2_edgevec_v3)
-        if p1_edgevec_v3 == p1_edgevec_v3:
+        #print("problem")
+        #print("p1 = ", p1_edgevec_v3)
+        #print("p2 = ", p2_edgevec_v3)
+        if p1_edgevec_v3 == p2_edgevec_v3:
             res['pearson_v2_opt'] = 1.
             res['pearson_v3'] = 1.
             res['spearman_v3'] = 1.
@@ -375,7 +375,7 @@ def compare_partitions_metrics(p1,p2):
             res['pearson_v2_opt'] = 0.
             res['pearson_v3'] = 0.
             res['spearman_v3'] = 0.
-        print("index = ", res['pearson_v3'])
+        #print("index = ", res['pearson_v3'])
     else:
         res['pearson_v2_opt'] = __nom/__denom
         res['pearson_v3'] = pearsonr(p1_edgevec_v3,p2_edgevec_v3)[0]
