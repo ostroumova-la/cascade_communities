@@ -5,7 +5,7 @@ from __future__ import print_function
 import sys
 import os
 
-input_fn = "results"
+input_fn = "epidemics"
 ep_name = sys.argv[1]
 range_from = int(sys.argv[2])
 range_to = int(sys.argv[3])

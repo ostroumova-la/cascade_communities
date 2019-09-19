@@ -49,7 +49,7 @@ if algorithm == "clique":
     
 dir = os.path.dirname("results/")
 if not os.path.exists(dir):
-            os.makedirs(dir)
+    os.makedirs(dir)
     
 res_file = open("results/"+filename, "w")
 res_time = open("results/"+filename+"_time", "w")

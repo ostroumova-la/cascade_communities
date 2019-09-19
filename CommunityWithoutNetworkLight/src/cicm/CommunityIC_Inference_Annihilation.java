@@ -37,6 +37,7 @@ public class CommunityIC_Inference_Annihilation {
 	private LinksHandler network;
 
 	static double min_value=0.00000001;
+	static double max_value=1.0 -  min_value;
 	static double threshold=0.00000001;
 
 	private int save_step=10;
@@ -691,6 +692,8 @@ public class CommunityIC_Inference_Annihilation {
 				}
 				if(inf_prob_u_k<min_value)
 					inf_prob_u_k=min_value;
+				if(inf_prob_u_k>max_value)
+					inf_prob_u_k=max_value;
 				if(inf_prob_u_k>1.0)
 					throw new RuntimeException("Inf prob \t"+inf_prob_u_k+" "+influence_prob_new_num[u][k]+" "+S[u][k][0]+" "+S[u][k][1]);
 				influenceProbabilities[u][k]=inf_prob_u_k;

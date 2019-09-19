@@ -1,0 +1,44 @@
+python3 ../SI-BD.py ../default.yaml graph/graph.clusters graph/graph.edges 0.08 1 100000 > epidemics
+python3 ../slicer.py SI-BD-1/ -5 8
+
+python3 ../SI-BD.py ../default.yaml graph/graph.clusters graph/graph.edges 0.08 1 100000 > epidemics
+python3 ../slicer.py SI-BD-2/ -5 8
+
+python3 ../SI-BD.py ../default.yaml graph/graph.clusters graph/graph.edges 0.08 1 100000 > epidemics
+python3 ../slicer.py SI-BD-3/ -5 8
+
+python3 ../SI-BD.py ../default.yaml graph/graph.clusters graph/graph.edges 0.08 1 100000 > epidemics
+python3 ../slicer.py SI-BD-4/ -5 8
+
+python3 ../SI-BD.py ../default.yaml graph/graph.clusters graph/graph.edges 0.08 1 100000 > epidemics
+python3 ../slicer.py SI-BD-5/ -5 8
+
+python3 ../SIR.py ../default.yaml graph/graph.clusters graph/graph.edges 26 100000 > epidemics
+python3 ../slicer.py SIR-1/ -5 8
+
+python3 ../SIR.py ../default.yaml graph/graph.clusters graph/graph.edges 26 100000 > epidemics
+python3 ../slicer.py SIR-2/ -5 8
+
+python3 ../SIR.py ../default.yaml graph/graph.clusters graph/graph.edges 26 100000 > epidemics
+python3 ../slicer.py SIR-3/ -5 8
+
+python3 ../SIR.py ../default.yaml graph/graph.clusters graph/graph.edges 26 100000 > epidemics
+python3 ../slicer.py SIR-4/ -5 8
+
+python3 ../SIR.py ../default.yaml graph/graph.clusters graph/graph.edges 26 100000 > epidemics
+python3 ../slicer.py SIR-5/ -5 8
+
+python3 ../C-SI-BD.py ../default.yaml graph/graph.clusters graph/graph.edges 0.036 0.0036 1 100000 > epidemics
+python3 ../slicer.py C-SI-BD-1/ -5 8
+
+python3 ../C-SI-BD.py ../default.yaml graph/graph.clusters graph/graph.edges 0.036 0.0036 1 100000 > epidemics
+python3 ../slicer.py C-SI-BD-2/ -5 8
+
+python3 ../C-SI-BD.py ../default.yaml graph/graph.clusters graph/graph.edges 0.036 0.0036 1 100000 > epidemics
+python3 ../slicer.py C-SI-BD-3/ -5 8
+
+python3 ../C-SI-BD.py ../default.yaml graph/graph.clusters graph/graph.edges 0.036 0.0036 1 100000 > epidemics
+python3 ../slicer.py C-SI-BD-4/ -5 8
+
+python3 ../C-SI-BD.py ../default.yaml graph/graph.clusters graph/graph.edges 0.036 0.0036 1 100000 > epidemics
+python3 ../slicer.py C-SI-BD-5/ -5 8

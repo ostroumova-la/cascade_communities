@@ -5,7 +5,7 @@ from __future__ import print_function
 import partition_metrics
 import networkx as nx
 import community_ext
-import sys
+import sys, os
 from collections import defaultdict
 import numpy as np
 from math import pow, exp
@@ -38,6 +38,11 @@ algorithm = sys.argv[2] # cd.random, cd.dani
 filename = epidemics + "_" + algorithm
 iters_beg = int(sys.argv[3])
 iters_end = int(sys.argv[4])
+
+dir = os.path.dirname("results/")
+if not os.path.exists(dir):
+    os.makedirs(dir)
+
 
 res_file = open("results/"+filename, "w")
 res_time = open("results/"+filename+"_time", "w")

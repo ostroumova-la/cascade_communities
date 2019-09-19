@@ -7338,3 +7338,53 @@ Execution stopped: IsFlt(false, 0, 0, Val), file ./snap/../glib/dt.h, line 602
 Mon Oct 29 23:56:51 2018
 Execution stopped: ((this!=GetNullRStr())&&(Refs==0))||((this==GetNullRStr())&&(Refs==1)), file ./snap/../glib/dt.h, line 347
 --------
+--------
+/home/ostroumova-la/cascade_communities/network-inference-multitree/network-inference-multitree.Err
+Sun Aug 18 22:44:01 2019
+Execution stopped: (0<=ValN)&&(ValN<Vals) [Reason:'Index:1 Vals:1 MxVals:16 Type:4TVecI4TStrE'], file ./snap/../glib/ds.h, line 410
+--------
+--------
+/home/ostroumova-la/cascade_communities/network-inference-multitree/network-inference-multitree.Err
+Sun Aug 18 22:44:01 2019
+Execution stopped: ((this!=GetNullRStr())&&(Refs==0))||((this==GetNullRStr())&&(Refs==1)), file ./snap/../glib/dt.h, line 347
+--------
+--------
+/home/ostroumova-la/cascade_communities/network-inference-multitree/network-inference-multitree.Err
+Sun Aug 18 22:47:46 2019
+Execution stopped: IsFlt(false, 0, 0, Val), file ./snap/../glib/dt.h, line 602
+--------
+--------
+/home/ostroumova-la/cascade_communities/network-inference-multitree/network-inference-multitree.Err
+Sun Aug 18 22:47:46 2019
+Execution stopped: ((this!=GetNullRStr())&&(Refs==0))||((this==GetNullRStr())&&(Refs==1)), file ./snap/../glib/dt.h, line 347
+--------
+--------
+/home/ostroumova-la/cascade_communities/network-inference-multitree/network-inference-multitree.Err
+Sun Aug 18 22:47:46 2019
+Execution stopped: IsFlt(false, 0, 0, Val), file ./snap/../glib/dt.h, line 602
+--------
+--------
+/home/ostroumova-la/cascade_communities/network-inference-multitree/network-inference-multitree.Err
+Sun Aug 18 22:47:46 2019
+Execution stopped: ((this!=GetNullRStr())&&(Refs==0))||((this==GetNullRStr())&&(Refs==1)), file ./snap/../glib/dt.h, line 347
+--------
+--------
+/home/ostroumova-la/cascade_communities/network-inference-multitree/network-inference-multitree.Err
+Sun Aug 18 22:47:46 2019
+Execution stopped: IsFlt(false, 0, 0, Val), file ./snap/../glib/dt.h, line 602
+--------
+--------
+/home/ostroumova-la/cascade_communities/network-inference-multitree/network-inference-multitree.Err
+Sun Aug 18 22:47:46 2019
+Execution stopped: ((this!=GetNullRStr())&&(Refs==0))||((this==GetNullRStr())&&(Refs==1)), file ./snap/../glib/dt.h, line 347
+--------
+--------
+/home/ostroumova-la/cascade_communities/network-inference-multitree/network-inference-multitree.Err
+Sun Aug 18 22:47:47 2019
+Execution stopped: IsFlt(false, 0, 0, Val), file ./snap/../glib/dt.h, line 602
+--------
+--------
+/home/ostroumova-la/cascade_communities/network-inference-multitree/network-inference-multitree.Err
+Sun Aug 18 22:47:47 2019
+Execution stopped: ((this!=GetNullRStr())&&(Refs==0))||((this==GetNullRStr())&&(Refs==1)), file ./snap/../glib/dt.h, line 347
+--------

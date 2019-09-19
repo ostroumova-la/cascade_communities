@@ -5,7 +5,7 @@ from __future__ import print_function
 import partition_metrics
 import networkx as nx
 import community_ext
-import sys
+import sys, os
 from collections import defaultdict
 import numpy as np
 from math import pow, exp
@@ -42,6 +42,11 @@ if algorithm == "a12":
     lmd0 = float(sys.argv[5])
     lmd = lmd0
     filename += "_"+str(lmd)
+    
+dir = os.path.dirname("results/")
+if not os.path.exists(dir):
+    os.makedirs(dir)
+    
 res_file = open("results/"+filename, "w")
 res_time = open("results/"+filename+"_time", "w")
 metrics = ['sub_jaccard','sub_nmi','sub_nmi_arithm','sub_fnmi','sub_fnmi_arithm','sub_F-measure','sub_pearson','jaccard_diff','nmi_fixed','nmi_fixed_arithm','fnmi_fixed','fnmi_fixed_arithm','F-measure_diff','pearson_v2','pearson_v3']

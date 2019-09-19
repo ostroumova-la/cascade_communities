@@ -24,9 +24,11 @@ We take $p_{in} = 10 p_{out}$ and choose $p_{out}$ such that the number of casca
 
 2. Generate epidemics
 
-Use files "generate_SI-BD", "generate_C-SI-BD" and "generate_SIR" to get commands to run for a given dataset. This will produce 5 epidemic samples for each epidemic type. In each case, we generate slices
+Use files "generate_SI-BD", "generate_C-SI-BD" and "generate_SIR" to get commands to run for a given dataset. This will produce 5 epidemic samples for each epidemic type. In each case, we generate slices.
+
+Do not forget that we need enough cascades to make slices.
 
 3. Run algorithms
 
-Use file run_base_algorithms for commands
+Use file run_algorithms for commands to run
 

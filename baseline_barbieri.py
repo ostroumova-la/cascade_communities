@@ -5,7 +5,7 @@ from __future__ import print_function
 import partition_metrics
 import networkx as nx
 import community_ext
-import sys
+import sys, os
 from collections import defaultdict
 import numpy as np
 from math import pow, exp
@@ -39,6 +39,11 @@ iters_beg = int(sys.argv[3])
 iters_end = int(sys.argv[4])
 type = sys.argv[5] # auto, oracle
 filename = epidemics + "_" + algorithm + "_" + type
+
+dir = os.path.dirname("results/")
+if not os.path.exists(dir):
+    os.makedirs(dir)
+
 
 res_file = open("results/"+filename, "w")
 res_time = open("results/"+filename+"_time", "w")
@@ -97,7 +102,7 @@ for size in range(iters_beg,iters_end+1):
             if type == "oracle":
                 command = 'java -classpath "../CommunityWithoutNetworkLight/src:../CommunityWithoutNetworkLight/lib/utils.jar:../CommunityWithoutNetworkLight/lib/fastutil-6.4.2.jar" diffusionBased.CommunityRate_Inference -a action.ep -c ../conf.inf -o output.cwnl.cr -k '+str(len(set(groundtruth_partition.values())))+'  -g graph/graph.clusters -l graph/graph.edges >> CR.stdout 2>> CR.stderr'
             else:
-                command = 'java -classpath "../CommunityWithoutNetworkLight/src:../CommunityWithoutNetworkLight/lib/utils.jar:../CommunityWithoutNetworkLight/lib/fastutil-6.4.2.jar" diffusionBased.CommunityRate_Inference_Annihilation -a action.ep -c ../conf.inf -o output.cwnl.cr -k '+str(64)+' >> CR.stdout 2>> CR.stderr'
+                command = 'java -classpath "../CommunityWithoutNetworkLight/src:../CommunityWithoutNetworkLight/lib/utils.jar:../CommunityWithoutNetworkLight/lib/fastutil-6.4.2.jar" diffusionBased.CommunityRate_Inference_Annihilation -a action.ep -c ../conf.inf -o output.cwnl.cr -k '+str(len(known_nodes))+' >> CR.stdout 2>> CR.stderr'
                 #print(len(set(groundtruth_partition.values())),"communities")
             try:
                 subprocess.check_call(command, shell=True)
@@ -164,7 +169,7 @@ for size in range(iters_beg,iters_end+1):
             if type == "oracle":
                 command = 'java -classpath "../CommunityWithoutNetworkLight/src:../CommunityWithoutNetworkLight/lib/utils.jar:../CommunityWithoutNetworkLight/lib/fastutil-6.4.2.jar" cicm.CommunityIC_Inference -a action.ep -c ../conf.inf -o output.cwnl.cic -k '+str(len(set(groundtruth_partition.values())))+' -g graph/graph.clusters -l graph/graph.edges >> CIC.stdout 2>> CIC.stderr'
             else:
-                command = 'java -classpath "../CommunityWithoutNetworkLight/src:../CommunityWithoutNetworkLight/lib/utils.jar:../CommunityWithoutNetworkLight/lib/fastutil-6.4.2.jar" cicm.CommunityIC_Inference_Annihilation -a action.ep -c ../conf.inf -o output.cwnl.cic -k '+str(4)+' >> CIC.stdout 2>> CIC.stderr'
+                command = 'java -classpath "../CommunityWithoutNetworkLight/src:../CommunityWithoutNetworkLight/lib/utils.jar:../CommunityWithoutNetworkLight/lib/fastutil-6.4.2.jar" cicm.CommunityIC_Inference_Annihilation -a action.ep -c ../conf.inf -o output.cwnl.cic -k '+str(len(known_nodes))+' >> CIC.stdout 2>> CIC.stderr'
             try:
                 subprocess.check_call(command, shell=True)
             except:

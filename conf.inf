@@ -1,0 +1,25 @@
+# configuration file 
+
+#required
+index_of_user_id	=	0
+index_of_item_id	=	1
+
+#-1 if no rating
+index_of_rating	= -1
+
+#-1 if no time
+index_of_timestamp	=	2
+
+#[true | false]
+skip_first_line	=	true
+
+#[unix_timestamp|any data format|millisecs]
+timestamp_format=	unix_timestamp
+
+#[co_occurrence|rating_compact,rating_standard]
+data_storage	= co_occurrence
+
+
+#[,tab]
+separator	=	tab
+
