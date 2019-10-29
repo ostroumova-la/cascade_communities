@@ -12,6 +12,16 @@ from math import pow, exp
 import subprocess
 import time as tm
 
+def cos_sim(a, b, norm=True):
+    """Takes 2 vectors a, b and returns the cosine similarity according 
+    to the definition of the dot product
+    """
+    dot_product = np.dot(a, b)
+    if not norm: return dot_product
+    norm_a = np.linalg.norm(a)
+    norm_b = np.linalg.norm(b)
+    return dot_product / (norm_a * norm_b)
+
 def get_graph(fn):
     G = nx.Graph()
     for line in open(fn):
@@ -213,6 +223,37 @@ for size in range(iters_beg,iters_end+1):
                     prev = node_to
                     known_nodes.add(node_to)
                     
+        if algorithm == "ramezani":
+            for l in open(ep_fn):
+                z = l.strip().split('\t')
+                if int(z[3]) == 0: continue
+                for t in z[9:]:
+                    zz = t.split("$")
+                    node_to = int(zz[1])
+                    known_nodes.add(node_to)
+
+            nodes_signatures = defaultdict(list)
+            for l in open(ep_fn):
+                z = l.strip().split('\t')
+                if int(z[3]) == 0: continue
+                ep_nodes = set()
+                for t in z[9:]:
+                    zz = t.split("$")
+                    node_to = int(zz[1])
+                    ep_nodes.add(node_to)
+
+                for n in known_nodes:
+                    if n in ep_nodes:
+                        nodes_signatures[n].append( 1. )
+                    else:
+                        nodes_signatures[n].append( 0. )
+
+            known_edges = dict()
+            for n1 in known_nodes:
+                for n2 in known_nodes:
+                    if int(n2)>int(n1):
+                        known_edges[ (str(n1),str(n2)) ] = cos_sim(nodes_signatures[n1],nodes_signatures[n2])
+                    
         if algorithm == "wpath":
             known_edges = defaultdict(int)
             for l in open(ep_fn):
@@ -242,7 +283,7 @@ for size in range(iters_beg,iters_end+1):
                 from_node, to_node = int(e[0]), int(e[1])
                 G.add_edge(from_node,to_node)
                 #G.add_edge(from_node,to_node,**{"weight": 1})                
-            if algorithm in ("wpath","clique"):
+            if algorithm in ("wpath","clique","ramezani"):
                 from_node, to_node = int(e[0]), int(e[1])
                 wght = float(known_edges[e])
                 G.add_edge(from_node,to_node,**{"weight": wght})

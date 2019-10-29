@@ -290,33 +290,35 @@ for (int step = step_init; step < step_final; step = step + step_size)
 			int count = 1;
 			for (int i = Listnodes.size()-1;i >(Listnodes.size()-numcom); i--)
 			{
-				Community[(int) Long.parseLong(Listnodes.get(i).name)] = count;
-				WeightComm[(int) Long.parseLong(Listnodes.get(i).name)] = 1;
-				for (int j = Edges.size() - 1; j >= 0; j--)
-				{
-					if (Edges.get(j).name.contains(Listnodes.get(i).name))
-					{
-						String[] token = (Edges.get(j).name).split("[->]"); //token[0] & token[2]
-						if (Listnodes.get(i).name.equals(token[0]))
-						{
-							if ((WeightComm[(int) Long.parseLong(token[2])] == 0) || (WeightComm[(int) Long.parseLong(token[2])] < Edges.get(j).w))
-							{
-								Community[(int) Long.parseLong(token[2])] = count;
-								WeightComm[(int) Long.parseLong(token[2])] = Edges.get(j).w;
-							}
-						}
-						else if (Listnodes.get(i).name.equals(token[2]))
-						{
-							if ((WeightComm[(int) Long.parseLong(token[0])] == 0) || (WeightComm[(int) Long.parseLong(token[0])] < Edges.get(j).w))
-							{
-								Community[(int) Long.parseLong(token[0])] = count;
-								
-								WeightComm[(int) Long.parseLong(token[0])] = Edges.get(j).w;
-							}
-						}
-					}
-				}
-				count++;
+                if(i>=0){
+                    Community[(int) Long.parseLong(Listnodes.get(i).name)] = count;
+                    WeightComm[(int) Long.parseLong(Listnodes.get(i).name)] = 1;
+                    for (int j = Edges.size() - 1; j >= 0; j--)
+                    {
+                        if (Edges.get(j).name.contains(Listnodes.get(i).name))
+                        {
+                            String[] token = (Edges.get(j).name).split("[->]"); //token[0] & token[2]
+                            if (Listnodes.get(i).name.equals(token[0]))
+                            {
+                                if ((WeightComm[(int) Long.parseLong(token[2])] == 0) || (WeightComm[(int) Long.parseLong(token[2])] < Edges.get(j).w))
+                                {
+                                    Community[(int) Long.parseLong(token[2])] = count;
+                                    WeightComm[(int) Long.parseLong(token[2])] = Edges.get(j).w;
+                                }
+                            }
+                            else if (Listnodes.get(i).name.equals(token[2]))
+                            {
+                                if ((WeightComm[(int) Long.parseLong(token[0])] == 0) || (WeightComm[(int) Long.parseLong(token[0])] < Edges.get(j).w))
+                                {
+                                    Community[(int) Long.parseLong(token[0])] = count;
+                                    
+                                    WeightComm[(int) Long.parseLong(token[0])] = Edges.get(j).w;
+                                }
+                            }
+                        }
+                    }
+                    count++;
+                }
 			}
 			for (int y = 0; y < nodes; y++)
 			{

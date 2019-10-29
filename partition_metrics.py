@@ -192,14 +192,14 @@ def compare_partitions_metrics(p1,p2):
         #print("p2 =", p2_edgevec)
         if p1_edgevec == p2_edgevec:
             res['sub_pearson'] = 1.
-            res['sub_spearman'] = 1.
+            #res['sub_spearman'] = 1.
         else:
             res['sub_pearson'] = 0.
-            res['sub_spearman'] = 0.
+            #res['sub_spearman'] = 0.
         #print("index = ", res['sub_pearson'])
     else:          
         res['sub_pearson'] = pearsonr(p1_edgevec,p2_edgevec)[0]
-        res['sub_spearman'] = spearmanr(p1_edgevec,p2_edgevec)[0]
+        #res['sub_spearman'] = spearmanr(p1_edgevec,p2_edgevec)[0]
         
     # res_dbg = dict()
     # res_dbg['ss_p1_ev'] = p1_edgevec
@@ -293,14 +293,14 @@ def compare_partitions_metrics(p1,p2):
         #print("p2 = ", p2_edgevec)
         if p1_edgevec_v2 == p2_edgevec_v2:
             res['pearson_v2'] = 1.
-            res['spearman_v2'] = 1.
+            #res['spearman_v2'] = 1.
         else:
             res['pearson_v2'] = 0.
-            res['spearman_v2'] = 0.
+            #res['spearman_v2'] = 0.
         #print("index = ", res['pearson_v2'])
     else:          
         res['pearson_v2'] = pearsonr(p1_edgevec_v2,p2_edgevec_v2)[0]
-        res['spearman_v2'] = spearmanr(p1_edgevec_v2,p2_edgevec_v2)[0]
+        #res['spearman_v2'] = spearmanr(p1_edgevec_v2,p2_edgevec_v2)[0]
 
     # print(p1_edgevec_v2)
     # print(p2_edgevec_v2)
@@ -370,16 +370,16 @@ def compare_partitions_metrics(p1,p2):
         if p1_edgevec_v3 == p2_edgevec_v3:
             res['pearson_v2_opt'] = 1.
             res['pearson_v3'] = 1.
-            res['spearman_v3'] = 1.
+            #res['spearman_v3'] = 1.
         else:
             res['pearson_v2_opt'] = 0.
             res['pearson_v3'] = 0.
-            res['spearman_v3'] = 0.
+            #res['spearman_v3'] = 0.
         #print("index = ", res['pearson_v3'])
     else:
         res['pearson_v2_opt'] = __nom/__denom
         res['pearson_v3'] = pearsonr(p1_edgevec_v3,p2_edgevec_v3)[0]
-        res['spearman_v3'] = spearmanr(p1_edgevec_v3,p2_edgevec_v3)[0]
+        #res['spearman_v3'] = spearmanr(p1_edgevec_v3,p2_edgevec_v3)[0]
 
     # return res_dbg
     return res 

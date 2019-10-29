@@ -25,14 +25,18 @@ python3 ../base_algorithms.py C-SI-BD clique -5 4 0
 python3 ../base_algorithms.py C-SI-BD clique -5 4 -1
 python3 ../base_algorithms.py C-SI-BD clique -5 4 -2
 
+python3 ../base_algorithms.py SI-BD ramezani -5 4
+python3 ../base_algorithms.py SIR ramezani -5 4
+python3 ../base_algorithms.py C-SI-BD ramezani -5 4
+
+
 python3 ../baseline_cd.py SI-BD cd.random -5 4
-python3 ../baseline_cd.py SI-BD cd.dani -5 4
-
 python3 ../baseline_cd.py SIR cd.random -5 4
-python3 ../baseline_cd.py SIR cd.dani -5 4
-
 python3 ../baseline_cd.py C-SI-BD cd.random -5 4
-python3 ../baseline_cd.py C-SI-BD cd.dani -5 4
+
+python3 ../baseline_cd.py SI-BD cd.dani -5 8
+python3 ../baseline_cd.py SIR cd.dani -5 8
+python3 ../baseline_cd.py C-SI-BD cd.dani -5 8
 
 python3 ../baseline_barbieri.py SI-BD cwnl.cr -5 4 auto
 python3 ../baseline_barbieri.py SI-BD cwnl.cic -5 4 auto
