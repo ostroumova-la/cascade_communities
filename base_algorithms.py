@@ -197,7 +197,6 @@ for size in range(iters_beg,iters_end+1):
                 z = l.strip().split('\t')
                 if int(z[3]) == 0:
                     print("error!")
-                    exit(0)
 
                 for t in z[9:]:
                     zz = t.split("$")

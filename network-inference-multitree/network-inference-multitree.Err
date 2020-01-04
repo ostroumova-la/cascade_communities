@@ -7388,3 +7388,13 @@ Execution stopped: IsFlt(false, 0, 0, Val), file ./snap/../glib/dt.h, line 602
 Sun Aug 18 22:47:47 2019
 Execution stopped: ((this!=GetNullRStr())&&(Refs==0))||((this==GetNullRStr())&&(Refs==1)), file ./snap/../glib/dt.h, line 347
 --------
+--------
+/home/ostroumova-la/cascade_communities/network-inference-multitree/network-inference-multitree.Err
+Sat Dec  7 12:05:39 2019
+Execution stopped: IsFlt(false, 0, 0, Val), file ./snap/../glib/dt.h, line 602
+--------
+--------
+/home/ostroumova-la/cascade_communities/network-inference-multitree/network-inference-multitree.Err
+Sat Dec  7 12:05:39 2019
+Execution stopped: ((this!=GetNullRStr())&&(Refs==0))||((this==GetNullRStr())&&(Refs==1)), file ./snap/../glib/dt.h, line 347
+--------
