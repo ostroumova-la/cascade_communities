@@ -1,4 +1,19 @@
-# Learning clusters through information diffusion
+# Cascade-based community detection
+
+This is a supplementary code for the paper [When Less is More: Systematic Analysis of Cascade-based Community Detection](https://arxiv.org/pdf/2002.00840.pdf).
+
+Supplementary directories:
+
+**CommDiff-Package/**: the source code for R-CoDi and D-CoDi from the paper “Community Detection Using Diffusion Information” by Ramezani et al.
+
+**CommunityWithoutNetworkLight/**: the source code for C-IC and C-Rate algorithms from the paper “Efficient methods for influence-based network-oblivious community detection” by Barbieri et al.
+
+**community_ext/**: [community detection library](https://github.com/altsoph/community_loglike) complementing the paper “Community detection through likelihood optimization: in search of a sound model” by Prokhorenkova et al. 
+
+Datasets directories:
+
+**LFR_1000/**, **citeseer/**, **cora-small/**, **cora/**, **dolphins/**, **eu-core/**, **football/**, **karate/**, **newsgroup/**, **polblogs/**, **polbooks/**, **twitter/**.
+
 
 Directories correspond to different datasets. The following assumes that we are in the corresponding dirrectory.
 
