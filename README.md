@@ -8,42 +8,35 @@ Supplementary directories:
 
 **CommunityWithoutNetworkLight/**: the source code for C-IC and C-Rate algorithms from the paper “Efficient methods for influence-based network-oblivious community detection” by Barbieri et al.
 
+**network-inference-multitree/**: the source code for the MultiTree algorithm from the paper “Submodular inference of diffusion networks from multiple trees” by Gomez-Rodriguez et al.
+
 **community_ext/**: [community detection library](https://github.com/altsoph/community_loglike) complementing the paper “Community detection through likelihood optimization: in search of a sound model” by Prokhorenkova et al. 
+
+**benchmark/**: used to generate synthetic graphs according to the LFR model proposed in “Benchmark graphs for testing community detection algorithms” by Lancichinetti et al. 
 
 Datasets directories:
 
 **LFR_1000/**, **citeseer/**, **cora-small/**, **cora/**, **dolphins/**, **eu-core/**, **football/**, **karate/**, **newsgroup/**, **polblogs/**, **polbooks/**, **twitter/**.
 
+Directories with results: **average_ranks/** and **average_results/** contain aggregated results over real-world datasets, **cascade_plots/** contains the distribution of cascade sizes.
 
-Directories correspond to different datasets. The following assumes that we are in the corresponding dirrectory.
+Description of scripts:
 
-1. Find good parameters for synthetic epidemics for a givent dataset. To do this, run: 
+**C-SI-BD.py**, **SI-BD.py**, **SIR.py** - to generate epidemics;
 
-python3 ../SI-BD.py ../tune_parameter.yaml graph/graph.clusters graph/graph.edges 0.15 1 100000 > epidemics
-cut -f 4 epidemics | sort | uniq -c | sort -n -k2 > freq.txt
-python3 ../make_cum_freq.py cum_freq.txt
+**base_algorithms.py**, **base_algorithms_twitter.py** - simple algorithms;
 
-We want the average size of the obtained cascades to be 2, this means that the first number in the output is close to 1.
+**baseline_barbieri.py**, **baseline_barbieri_twitter.py** - to run C-IC and C-Rate;
 
-python3 ../SIR.py ../tune_parameter.yaml graph/graph.clusters graph/graph.edges 12 100000 > epidemics
-cut -f 4 epidemics | sort | uniq -c | sort -n -k2 > freq.txt
-python3 ../make_cum_freq.py cum_freq.txt
+**baseline_cd.py**, **baseline_cd_twitter.py** - to run R-CoDi and D-CoDi;
 
-We want the average size of the obtained cascades to be 2, this means that the first number in the output is close to 1.
+**opt_algorithms.py**, **opt_algorithms_twitter.py** - GraphOpt and ClustOpt algorithms;
 
-python3 ../C-SI-BD.py ../tune_parameter.yaml graph/graph.clusters graph/graph.edges 0.09 0.009 1 100000 > epidemics
-cut -f 4 epidemics | sort | uniq -c | sort -n -k2 > freq.txt
-python3 ../make_cum_freq.py cum_freq.txt
+**cascade_plots.py**, **cascade_plots_twitter.py** - to generate data for plots;
 
-We take $p_{in} = 10 p_{out}$ and choose $p_{out}$ such that the number of cascades consisting of one node is about 20\%, this means that the third number in the output is close to 0.8
+**average_rank.py**, **average_results.py** to aggregate the results.
 
-2. Generate epidemics
+To reproduce the main experiments from the paper one can use the file **paper_experiments.tex**.
 
-Use files "generate_SI-BD", "generate_C-SI-BD" and "generate_SIR" to get commands to run for a given dataset. This will produce 5 epidemic samples for each epidemic type. In each case, we generate slices.
 
-Do not forget that we need enough cascades to make slices.
-
-3. Run algorithms
-
-Use file run_algorithms for commands to run
 
